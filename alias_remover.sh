@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script para borrar aliases ya definidos
+#Script to remove alias already created
 
 if [ $# == 1 ]
 	then
@@ -10,10 +10,10 @@ if [ $# == 1 ]
 		rm $HOME/.bash_aliases
 		cat tmp.txt > $HOME/.bash_aliases
 		rm tmp.txt
-		echo "Alias borrado con éxito"
+		echo "Alias removed succesfully"
 	else
-		echo "No existe el alias indicado"
+		echo "Error: Alias not found"
 	fi
 else
-	echo "Error: Sintaxis: rmal nombre_alias"
+	echo "Error: Sintaxis: ./alias_remover.s <alias_name>"
 fi

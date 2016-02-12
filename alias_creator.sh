@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script para crear o modificar aliases, permanentes y no repetidos
+#Script to create or modificate aliases, permanent and non repeated
 
 if [ $# -eq 2 ]
 	then
@@ -7,16 +7,16 @@ if [ $# -eq 2 ]
 		then
 		if type $1 &> $HOME/tmp.txt
 			then
-			echo "El alias ya es un comando"
+			echo "The alias is already a command"
 		else
 			echo "alias $1=\"$2\"" >> $HOME/.bash_aliases
-			echo "Alias creado con éxito"
+			echo "Alias created succesfully"
 			alias $1="$2"
 		fi
 	rm $HOME/tmp.txt
 	else
-		echo "Ya existe un alias con ese nombre"
+		echo "The alias already exists"
 	fi
 else
-	echo 'Error: Sintáxis: addal nombre_alias "comando" (comando entre comillas dobles)'
+	echo 'Error: Sintáxis: ./alias_creator.sh <alias_name> "command" (command in double quotes)'
 fi

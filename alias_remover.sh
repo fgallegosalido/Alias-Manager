@@ -15,5 +15,5 @@ if [ $# == 1 ]
 		echo "Error: Alias not found"
 	fi
 else
-	echo "Error: Sintaxis: ./alias_remover.s <alias_name>"
+	echo "Error: Sintaxis: ./alias_remover.sh <alias_name>"
 fi

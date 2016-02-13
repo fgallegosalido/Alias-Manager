@@ -5,7 +5,7 @@ if [ $# -eq 2 ]
 	then
 	if [ $(cat $HOME/.bash_aliases | grep "alias $1=" | wc -l) == 0 ]
 		then
-		if type $1 &> $HOME/tmp.txt
+		if type $1 &> /dev/null
 			then
 			echo "The alias is already a command"
 		else
@@ -13,7 +13,6 @@ if [ $# -eq 2 ]
 			echo "Alias created succesfully"
 			alias $1="$2"
 		fi
-	rm $HOME/tmp.txt
 	else
 		echo "The alias already exists"
 	fi

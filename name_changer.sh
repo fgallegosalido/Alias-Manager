@@ -11,12 +11,14 @@ if [ $# -eq 2 ]
 		else
 			unalias $1
       sed -i "s/alias $1=/alias $2=/" ~/.bash_aliases
-      alias $2="$(cat $HOME/.bash_aliases | grep "alias $2=" | cut -d"=" -f2-)"
+			string=$(cat $HOME/.bash_aliases | grep "alias $2=" | cut -d"=" -f2-)
+			string=${string:1:${#string}-2}
+      alias $2="$string"
 			echo "Alias name changed succesfully"
 		fi
 	else
   	echo "Error: Alias not found"
 	fi
 else
-	echo 'Error: Syntax: ./name_changer.sh <old_name> <new_name>'
+	echo 'Error: Syntax: . ./name_changer.sh <old_name> <new_name>'
 fi

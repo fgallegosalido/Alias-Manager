@@ -17,5 +17,5 @@ if [ $# -eq 2 ]
 		echo "The alias already exists"
 	fi
 else
-	echo 'Error: Syntax: ./alias_creator.sh <alias_name> "command" (command in double quotes)'
+	echo 'Error: Syntax: . ./alias_creator.sh <alias_name> "command" (command in double quotes)'
 fi

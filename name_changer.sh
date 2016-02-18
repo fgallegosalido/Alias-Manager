@@ -11,8 +11,6 @@ if [ $# -eq 2 ]
 		else
 			unalias $1
       sed -i "s/alias $1=/alias $2=/" ~/.bash_aliases
-			text=$(cat $HOME/.bash_aliases | grep "alias $2=" | cut -d"=" -f2-)
-			echo $text
       alias $2="$(cat $HOME/.bash_aliases | grep "alias $2=" | cut -d"=" -f2-)"
 			echo "Alias name changed succesfully"
 		fi

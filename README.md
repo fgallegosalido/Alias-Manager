@@ -8,3 +8,5 @@ $> . /path/to/script/<script_name>
 ```
 
 This is due to the way shell scripts are executed.
+
+Note: It seems to be a weird bug with tabs (the code isn't correctly tabulated)

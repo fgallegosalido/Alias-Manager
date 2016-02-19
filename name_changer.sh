@@ -3,7 +3,7 @@
 
 if [ $# -eq 2 ]
 	then
-	if [ $(cat $HOME/.bash_aliases | grep "alias $1=" | wc -l) == 1 ]
+	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 1 ]
 		then
 		if type $2 &> /dev/null
 			then
@@ -11,7 +11,7 @@ if [ $# -eq 2 ]
 		else
 			unalias $1
 			sed -i "s/alias $1=/alias $2=/" ~/.bash_aliases
-			string=$(cat $HOME/.bash_aliases | grep "alias $2=" | cut -d"=" -f2-)
+			string=$(egrep "^alias $2=.*" $HOME/.bash_aliases | cut -d"=" -f2-)
 			string=${string:1:-1}
 			alias $2="$string"
 			echo "Alias name changed succesfully"

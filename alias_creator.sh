@@ -3,7 +3,7 @@
 
 if [ $# -eq 2 ]
 	then
-	if [ $(cat $HOME/.bash_aliases | grep "alias $1=" | wc -l) == 0 ]
+	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 0 ]
 		then
 		if type $1 &> /dev/null
 			then

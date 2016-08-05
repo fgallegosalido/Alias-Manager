@@ -1,12 +1,9 @@
 #!/bin/bash
 #Script to create or modificate aliases, permanent and non repeated
 
-if [ $# -eq 2 ]
-	then
-	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 0 ]
-		then
-		if type $1 &> /dev/null
-			then
+if [ $# -eq 2 ]; then
+	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 0 ]; then
+		if type $1 &> /dev/null; then
 			echo "The alias is already a command"
 		else
 			echo "alias $1=\"$2\"" >> $HOME/.bash_aliases

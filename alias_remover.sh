@@ -1,10 +1,8 @@
 #!/bin/bash
 #Script to remove alias already created
 
-if [ $# == 1 ]
-	then
-	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 1 ]
-		then
+if [ $# == 1 ]; then
+	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 1 ]; then
 		unalias $1
 		sed -i "/alias $1=/d" $HOME/.bash_aliases
 		echo "Alias removed succesfully"

@@ -1,12 +1,9 @@
 #!/bin/bash
 # Script to change the name of a defined alias
 
-if [ $# -eq 2 ]
-	then
-	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 1 ]
-		then
-		if type $2 &> /dev/null
-			then
+if [ $# -eq 2 ]; then
+	if [ $(egrep "^alias $1=.*" $HOME/.bash_aliases | wc -l) == 1 ]; then
+		if type $2 &> /dev/null; then
 			echo "The new name is already a command"
 		else
 			unalias $1
